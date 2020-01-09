@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NUML FakeBox</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+</head>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+body .section{
+    height: 1000px;
+    background: rgb(28,104,206);
+    background: linear-gradient(124deg, rgba(28,104,206,1) 0%, rgba(77,172,227,1) 45%, rgba(160,88,215,1) 93%);
+
+
+}
+header{
+    width: 100%;
+}
+header nav{
+    height: 500px;
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    z-index: 1000000;
+    
+
+}
+header .bg-dna{
+    position: absolute;
+    right: 23%;
+    top: -30px;
+    
+}
+header .bg-dna img{
+   width: 116%;
+    transition: 1.7s cubic-bezier(0.54, 0.01, 0.08, 1);
+   
+    
+}
+.class2{
+   width: 130%;
+   margin-right: 80px;
+   
+    
+}
+header .logo{
+    float: left;
+    padding: 20px;
+    width: 90%
+}
+header .logo img{
+   width: 12%;
+}
+header nav ul{
+    
+    
+    margin-right: 40px;
+}
+header nav ul li{
+    list-style: none;
+    display: block;
+    color: white;
+    padding: 25px;
+    font-size: 14px;
+    cursor: pointer;
+ 
+}
+
+.li_class{
+    font-weight: bold;
+}
+/*
+header .hero:hover{
+    top: -50px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+*/
+header .hero{
+    width: 80%;
+    margin: 0 auto;
+    top: 100px;
+    position: relative;
+   
+    
+    
+}
+header .hero .text{
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    
+    
+}
+header .hero .text h1{
+    font-size: 100px;
+    line-height: 1.1;
+    font-weight: bolder;
+     
+}
+header .hero .text p{
+    font-size: 20px;
+     
+}
+header .hero .text .btn{
+    width: 15%;
+    margin: 0 auto;
+    background-color: #006080;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+     
+}
+header .hero .bg-logo{
+    margin: 0 auto;
+    width: 10%;
+    margin-top: 50px;
+    
+  
+}
+@keyframes bg-logo {
+  0%   {}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
+}
+
+header .hero .bg-logo img{
+    width: 70%;
+    animation-name: bg-logo;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+  
+}
+.shadow{
+    margin-top: 10px;
+    width: 75%;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.3);
+    filter: blur(2px);
+    
+}
+.my_form, .stance{
+    top: 10%;
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    
+    
+}
+.stance{
+    
+}
+.my_form form, .stance form {
+    font-size: 30px;
+    margin: 0 auto;
+    width: 50%;
+   
+    
+    
+}
+
+.my_form form #my_input, .stance form #my_input {
+    font-size: 20px;
+    padding: 30px;
+    padding-right: 0px;
+    padding-left: 30px;
+    width: 97%;
+    border: none;
+    border-radius: 50px;
+    z-index: 20000;
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+#btn{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #006080;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: white;
+    
+}
+.stance form #my_textarea {
+    font-size: 20px;
+    padding: 15px;
+    padding-right: 0px;
+    padding-left: 20px;
+    width: 97%;
+    border: none;
+    border-radius: 10px;
+    z-index: 20000;
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin-top: 50px;
+}
+</style>
+<body>
+    <div class="section">
+        <header>
+            
+                <div class="logo">
+                    <img src="{{url_for('static',filename='img/logo2.png')}}" alt="">
+                </div>
+            <nav>
+                <ul class="menu">
+                    <li class="li_class" id="li1" style="display: none;">Home</li>
+                    <li>Home</li>
+                    <li>Check NEWS</li>
+                    <li>About</li>
+                </ul>
+            </nav>
+            
+            <div class="bg-dna">
+                <img id="dna" src="{{url_for('static',filename='img/bg-dna.png')}}" alt="">
+            </div>
+            
+            <div class="hero">
+                <div class="text">
+                    <h1>NUML <br> Fake Blox</h1>
+                    <p>A Machine Learning approach to analyze  news</p>
+                    
+                
+                </div>
+                <div class="bg-logo">
+                  <center>
+                   <img src="{{url_for('static',filename='img/bg-logo.png')}}" alt="">
+                   <div class="shadow">
+                       
+                   </div>
+                   </center>
+                </div>
+            </div>
+        </header>
+        
+        <div class="my_form">
+            <form action="{{url_for('predict')}}" method="POST">
+                <input type="text" name="news" autocomplete="off" id="my_input" placeholder="Search a NEWS here...">
+                <input id="btn" name="submmit2" type="submit" value ="Check authenticity">
+            </form>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
+
+
+<script>
+$(document).ready(function(){
+    
+    dna = $("#dna");
+    form = $(".my_form").hide();
+    list = "";
+    count = 0;
+    hero = $(".hero");
+    stance = $(".stance");
+    form.hide();
+    
+    
+    
+   
+    
+    
+    $('ul.menu li').click(function(e) 
+    { 
+        
+        list = $(this).text();
+        $(this).addClass("li_class"); 
+        prev = $(this);
+        if(list == "Check NEWS"){
+        stance.fadeOut();
+        $(".hero").fadeOut(900,0, function(){
+        form.css("opacity","1");
+        form.fadeIn(1200);
+        });
+        dna.addClass("class2");
+        }
+        
+        if(list == "Home"){
+        stance.fadeOut();
+        form.fadeOut(900,0, function(){
+        //form.css("opacity","1");
+            hero.fadeIn(1200);
+        });
+        dna.removeClass("class2");
+        }
+        
+        if(list == "Stance Detection"){
+        $(".hero").fadeOut();
+        form.fadeOut(900,0, function(){
+        //form.css("opacity","1");
+            stance.css("opacity","1");
+            stance.fadeIn(1200);
+        });
+        dna.removeClass("class2");
+        }
+        
+      
+       
+    });
+   
+ });
+
+
+
+</script>
